@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Presentation Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>✋</span> GestureControl
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#controller">Controller</a>
+                <a href="#gestures">Gestures</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+
+            <div class="hero-content">
+                <div class="hero-badge">✨ Smart Presentation Control</div>
+
+                <h1>
+                    Control Your Presentation
+                    <span>With Hand Gestures</span>
+                </h1>
+
+                <p>
+                    A web-based presentation controller that allows you
+                    to navigate slides using simple and natural hand gestures.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#controller" class="btn primary-btn">
+                        Start Controller →
+                    </a>
+
+                    <a href="#gestures" class="btn secondary-btn">
+                        Learn Gestures
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <span>✓ Touchless Control</span>
+                    <span>✓ Real-Time Detection</span>
+                    <span>✓ Web-Based</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="gesture-circle">✋</div>
+
+                <div class="floating-card next-card">
+                    <span>☝️</span>
+                    <div>
+                        <strong>Next Slide</strong>
+                        <small>Gesture Control</small>
+                    </div>
+                </div>
+
+                <div class="floating-card previous-card">
+                    <span>✌️</span>
+                    <div>
+                        <strong>Previous Slide</strong>
+                        <small>Gesture Control</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRESENTATION UPLOAD -->
+    <section id="presentation" class="presentation-section">
+        <div class="section-container">
+
+            <div class="section-label">PRESENTATION</div>
+            <h2>Upload Your Presentation</h2>
+
+            <p class="section-description">
+                Upload a PDF presentation and control its slides using hand gestures.
+            </p>
+
+            <div class="upload-card">
+                <div class="upload-icon">📄</div>
+                <h3>Select Presentation</h3>
+
+                <p>Upload your presentation in PDF format.</p>
+
+                <label for="presentation-file" class="upload-btn">
+                    📁 Choose PDF
+                </label>
+
+                <input
+                    type="file"
+                    id="presentation-file"
+                    accept=".pdf,application/pdf"
+                    hidden
+                >
+
+                <p id="file-name" class="file-name">
+                    No presentation selected
+                </p>
+            </div>
+
+            <!-- PDF PREVIEW -->
+            <div id="pdf-container" class="pdf-container">
+                <div class="pdf-placeholder">
+                    <div class="pdf-placeholder-icon">📄</div>
+                    <h3>No Presentation Loaded</h3>
+                    <p>Upload a PDF to display your presentation here.</p>
+                </div>
+            </div>
+
+            <!-- PDF CONTROLS -->
+            <div class="pdf-controls">
+                <button
+                    id="previous-slide"
+                    class="slide-btn"
+                    type="button"
+                >
+                    ← Previous
+                </button>
+
+                <div class="page-info">
+                    Page: <span id="current-page">1</span>
+                </div>
+
+                <button
+                    id="next-slide"
+                    class="slide-btn"
+                    type="button"
+                >
+                    Next →
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTROLLER SECTION -->
+    <section id="controller" class="controller-section">
+        <div class="section-container">
+
+            <div class="section-label">LIVE CONTROLLER</div>
+            <h2>Presentation Controller</h2>
+
+            <p class="section-description">
+                Use your webcam to detect hand gestures and control your presentation.
+            </p>
+
+            <div class="controller-grid">
+
+                <!-- CAMERA CARD -->
+                <div class="controller-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Camera Preview</h3>
+                            <p>Your webcam feed</p>
+                        </div>
+
+                        <div class="live-indicator">
+                            <span></span> LIVE
+                        </div>
+                    </div>
+
+                    <div class="camera-screen">
+                        <video
+                            id="camera"
+                            autoplay
+                            playsinline
+                            muted
+                        ></video>
+
+                        <div
+                            id="camera-placeholder"
+                            class="camera-placeholder"
+                        >
+                            <div>📷</div>
+                            <h3>Camera is not started</h3>
+                            <p>Click the button below to start your camera.</p>
+                        </div>
+                    </div>
+
+                    <div class="camera-status">
+                        <div class="status-left">
+                            <span id="status-dot" class="status-dot"></span>
+                            <span>Camera Status</span>
+                        </div>
+
+                        <strong id="camera-status">Not Connected</strong>
+                    </div>
+
+                    <button
+                        id="start-camera"
+                        class="start-camera"
+                        type="button"
+                    >
+                        Start Camera
+                    </button>
+                </div>
+
+                <!-- GESTURE DETECTION CARD -->
+                <div class="controller-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Gesture Detection</h3>
+                            <p>Real-time gesture information</p>
+                        </div>
+                    </div>
+
+                    <div class="gesture-display">
+                        <div id="gesture-icon" class="gesture-icon">✋</div>
+
+                        <h3 id="gesture-name">No Gesture Detected</h3>
+
+                        <p id="gesture-description">
+                            Show your hand in front of the camera.
+                        </p>
+                    </div>
+
+                    <div class="current-action">
+                        <div>
+                            <span>Current Action</span>
+                            <strong id="current-action">Waiting...</strong>
+                        </div>
+
+                        <div class="action-icon">⏳</div>
+                    </div>
+
+                    <!-- MANUAL CONTROLS -->
+                    <div class="manual-controls">
+                        <button
+                            id="manual-previous-slide"
+                            class="manual-btn"
+                            type="button"
+                        >
+                            ← Previous
+                        </button>
+
+                        <button
+                            id="manual-next-slide"
+                            class="manual-btn"
+                            type="button"
+                        >
+                            Next →
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FEATURES -->
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <div>
+                        <h4>Webcam</h4>
+                        <p>Camera Input</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✋</div>
+                    <div>
+                        <h4>Gesture</h4>
+                        <p>Hand Detection</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div>
+                        <h4>Real-Time</h4>
+                        <p>Instant Response</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <div>
+                        <h4>Presentation</h4>
+                        <p>Slide Control</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GESTURES SECTION -->
+    <section id="gestures" class="info-section">
+        <div class="section-container">
+
+            <div class="section-label">GESTURES</div>
+            <h2>Supported Hand Gestures</h2>
+
+            <p class="section-description">
+                Use simple hand gestures to navigate through your presentation.
+            </p>
+
+            <div class="gesture-grid">
+
+                <div class="gesture-card">
+                    <div class="big-gesture">✋</div>
+                    <h3>Open Palm</h3>
+                    <p>Show an open palm to indicate a detected hand.</p>
+                </div>
+
+                <div class="gesture-card">
+                    <div class="big-gesture">☝️</div>
+                    <h3>One Finger</h3>
+                    <p>Raise your index finger to move to the next slide.</p>
+                </div>
+
+                <div class="gesture-card">
+                    <div class="big-gesture">✌️</div>
+                    <h3>Two Fingers</h3>
+                    <p>Raise your index and middle fingers to move to the previous slide.</p>
+                </div>
+
+                <div class="gesture-card">
+                    <div class="big-gesture">👍</div>
+                    <h3>Thumb Up</h3>
+                    <p>Show a thumbs-up gesture to activate or resume control.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="how-section">
+        <div class="section-container">
+
+            <div class="section-label">HOW IT WORKS</div>
+            <h2>Simple Three-Step Process</h2>
+
+            <div class="steps-grid">
+
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">📄</div>
+                    <h3>Upload Presentation</h3>
+                    <p>Upload your PDF presentation into the controller.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">📷</div>
+                    <h3>Start Camera</h3>
+                    <p>Allow camera access so the system can detect your hand.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">✋</div>
+                    <h3>Control With Gestures</h3>
+                    <p>Perform recognized gestures to move between slides.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+
+            <div class="section-label">ABOUT</div>
+            <h2>About GestureControl</h2>
+
+            <p class="about-text">
+                GestureControl is a web-based presentation controller that uses
+                computer vision and hand gesture recognition to provide
+                touchless presentation navigation.
+
+                The system uses the webcam to detect hand landmarks and converts
+                recognized gestures into presentation commands such as next
+                slide and previous slide.
+            </p>
+
+            <div class="technology-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>MediaPipe</span>
+                <span>PDF.js</span>
+                <span>Computer Vision</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">✋ GestureControl</div>
+
+            <p>Hand Gesture Presentation Controller</p>
+
+            <p class="copyright">
+                © 2026 GestureControl. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
