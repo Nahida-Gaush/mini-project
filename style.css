@@ -1,0 +1,1072 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    height: 72px;
+    width: 100%;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #172033;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 130px 8% 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #f8fbff,
+        #edf5ff
+    );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.badge {
+    display: inline-block;
+
+    background: #dbeafe;
+    color: #2563eb;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.hero p {
+    color: #64748b;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+    text-decoration: none;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: white;
+    color: #2563eb;
+
+    border: 1px solid #2563eb;
+}
+
+.secondary-btn:hover {
+    background: #eff6ff;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.features-list span::first-letter {
+    color: #16a34a;
+}
+
+
+/* ================================
+   HERO VISUAL
+================================ */
+
+.hero-visual {
+    width: 420px;
+    height: 420px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gesture-circle {
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 110px;
+
+    border: 10px solid #dbeafe;
+
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+}
+
+.floating-card {
+    position: absolute;
+
+    background: white;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.floating-card > span {
+    font-size: 30px;
+}
+
+.floating-card strong {
+    display: block;
+    font-size: 13px;
+}
+
+.floating-card small {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.card-one {
+    top: 50px;
+    right: 0;
+}
+
+.card-two {
+    bottom: 50px;
+    left: 0;
+}
+
+
+/* ================================
+   COMMON SECTIONS
+================================ */
+
+.controller-section,
+.gestures-section,
+.how-section,
+.features-section,
+.about-section {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    color: #2563eb;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+
+    margin: 8px 0 12px;
+}
+
+.section-heading p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* ================================
+   CONTROLLER
+================================ */
+
+.controller-section {
+    background: white;
+}
+
+.controller-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.panel {
+    background: #f8fafc;
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.panel-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.panel-heading h3 {
+    font-size: 20px;
+}
+
+.panel-heading p {
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.live {
+    color: #dc2626;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   CAMERA
+================================ */
+
+.camera-screen {
+    height: 290px;
+
+    background: #111827;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+.camera-content {
+    max-width: 250px;
+}
+
+.camera-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+.camera-content h4 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.camera-content p {
+    color: #cbd5e1;
+
+    font-size: 12px;
+}
+
+.camera-status {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 0;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+.camera-status span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    display: inline-block;
+
+    background: #ef4444;
+
+    border-radius: 50%;
+}
+
+.camera-status strong {
+    color: #ef4444;
+}
+
+.start-camera {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.start-camera:hover {
+    background: #1d4ed8;
+}
+
+
+/* ================================
+   GESTURE DETECTION
+================================ */
+
+.detected-gesture {
+    background: white;
+
+    padding: 35px 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.large-hand {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+.detected-gesture h4 {
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.detected-gesture p {
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.action-box {
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.action-box span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.action-box strong {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: 15px;
+}
+
+.action-icon {
+    font-size: 25px;
+}
+
+.slide-controls {
+    display: flex;
+
+    gap: 12px;
+}
+
+.slide-controls button {
+    flex: 1;
+
+    padding: 12px;
+
+    background: white;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.slide-controls button:hover {
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-color: #2563eb;
+}
+
+
+/* ================================
+   CONTROLLER INFO
+================================ */
+
+.controller-info {
+    max-width: 1150px;
+
+    margin: 30px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.info-card {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.info-card > span {
+    font-size: 25px;
+}
+
+.info-card strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.info-card small {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* ================================
+   GESTURES
+================================ */
+
+.gestures-section {
+    background: #f8fafc;
+}
+
+.gesture-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gesture-card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 28px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.gesture-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gesture-icon {
+    font-size: 55px;
+
+    margin-bottom: 12px;
+}
+
+.gesture-card h3 {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.gesture-card p {
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.gesture-card span {
+    display: inline-block;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   HOW IT WORKS
+================================ */
+
+.how-section {
+    background: white;
+}
+
+.steps {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.step {
+    flex: 1;
+
+    text-align: center;
+}
+
+.step-number {
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 16px;
+
+    margin-bottom: 6px;
+}
+
+.step p {
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.arrow {
+    font-size: 25px;
+
+    color: #94a3b8;
+}
+
+
+/* ================================
+   FEATURES
+================================ */
+
+.features-section {
+    background: #f8fafc;
+}
+
+.features-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+
+    padding: 28px 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    text-align: center;
+}
+
+.feature-card > div {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   ABOUT
+================================ */
+
+.about-section {
+    background: white;
+
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.about-content h2 {
+    font-size: 34px;
+
+    margin: 10px 0 20px;
+}
+
+.about-content p {
+    color: #64748b;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #172033;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+footer .copyright {
+    margin-top: 12px;
+
+    font-size: 11px;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-buttons,
+    .features-list {
+        justify-content: center;
+    }
+
+    .controller-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gesture-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        flex-wrap: wrap;
+    }
+
+    .step {
+        min-width: 40%;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-visual {
+        width: 320px;
+        height: 320px;
+    }
+
+    .gesture-circle {
+        width: 220px;
+        height: 220px;
+
+        font-size: 80px;
+    }
+
+    .controller-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gesture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        text-align: center;
+    }
+
+    .hero-visual {
+        width: 280px;
+        height: 280px;
+    }
+
+    .gesture-circle {
+        width: 190px;
+        height: 190px;
+
+        font-size: 65px;
+    }
+
+    .controller-info {
+        grid-template-columns: 1fr;
+    }
+
+    .controller-section,
+    .gestures-section,
+    .how-section,
+    .features-section,
+    .about-section {
+        padding: 70px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+}
+/* Camera video inside preview box */
+
+.camera-screen {
+    position: relative;
+    overflow: hidden;
+}
+
+.camera-screen video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: scaleX(-1);
+}
+/* ==========================================
+   PDF PRESENTATION
+   ========================================== */
+
+.pdf-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 600px;
+    margin: 30px auto;
+    display: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
